@@ -80,6 +80,9 @@ function PlayerContextProvider(props) {
 	const [volume, setVolume] = useState(0.5);
 	const [isPaused, setIsPaused] = useState(false);
 
+	/* Current song changed.
+	   Start playing, or stop if not a song
+	   */
 	useEffect(() => {
 		if (!song) {
 			audio.pause();
@@ -92,10 +95,14 @@ function PlayerContextProvider(props) {
 		}
 	}, [audio, song]);
 
+	/* Volume setting was changed
+	   */
 	useEffect(() => {
 		audio.volume = volume;
 	}, [audio, volume]);
 
+	/* Paused state was changed
+	   */
 	useEffect(() => {
 		isPaused ? audio.pause() : audio.play();
 	}, [audio, isPaused]);
