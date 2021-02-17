@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import PlayerContextProvider from "./contexts/PlayerContext";
+
+import Navbar from "./components/Navbar";
+import SongPlayer from "./components/SongPlayer";
+import Home from "./routes/Home";
+import About from "./routes/About";
+
+function App()  {
+	const [links] = useState([
+		{ name: "home", href: "/" },
+		{ name: "about", href: "/about" },
+	]);
+
+	// const { currentSong } = useContext(PlayerContext);
+
+	return (
+		<div className="App">
+			<BrowserRouter>
+				<Navbar links={links}/>
+
+				<PlayerContextProvider>
+					{/* {currentSong !== undefined && */}
+						<SongPlayer />
+					{/* } */}
+
+					<Route exact path="/">
+						<Home />
+					</Route>
+				</PlayerContextProvider>
+
+				<Route exact path="/about">
+					<About />
+				</Route>
+			</BrowserRouter>
+		</div>
+	);
 }
 
 export default App;

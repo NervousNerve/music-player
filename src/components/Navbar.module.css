@@ -1,0 +1,22 @@
+.navbar {
+	padding: 0.5rem;
+	color: white;
+	background: black;
+}
+
+.navbar .logo {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.navLinks a {
+	padding: 0.5rem 1rem;
+	color: white;
+	text-decoration: none;
+}
+
+.navLinks .active {
+	font-weight: 600;
+	color: black;
+	background-color: white;
+}

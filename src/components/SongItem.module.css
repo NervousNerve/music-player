@@ -1,0 +1,65 @@
+.songItem {
+	color: white;
+
+	display: grid;
+	grid-template-columns: auto 1fr;
+}
+
+.content {
+	padding: 0.5rem 1rem;
+}
+
+.title {
+	margin: 0;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+.title:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.subtitle {
+	margin: 0;
+}
+
+.label {
+	opacity: 50%;
+}
+
+.imageBox {
+	position: relative;
+	width: 8rem;
+	height: 8rem;
+}
+
+.songImg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.playBtn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	font-size: 4rem;
+	border: none;
+	color: transparent;
+	background: transparent;
+	outline: none;
+	cursor: pointer;
+}
+.songItem:hover .playBtn {
+	color: #fff8;
+	background: #0008;
+}
+.songItem .playBtn:hover {
+	color: #fff;
+	background: #0008;
+}
