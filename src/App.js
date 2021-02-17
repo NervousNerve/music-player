@@ -14,17 +14,13 @@ function App()  {
 		{ name: "about", href: "/about" },
 	]);
 
-	// const { currentSong } = useContext(PlayerContext);
-
 	return (
 		<div className="App">
 			<BrowserRouter>
 				<Navbar links={links}/>
 
 				<PlayerContextProvider>
-					{/* {currentSong !== undefined && */}
-						<SongPlayer />
-					{/* } */}
+					<SongPlayer />
 
 					<Route exact path="/">
 						<Home />
